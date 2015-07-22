@@ -1,0 +1,31 @@
+<ion-view title="Descriptif">
+    <ion-content class="has-header" style="background:#F0F0F0; ">
+        <div class="imageContest">
+            <img src="{{vm.myData.picture}}" style="width: 100%;">
+        </div>
+        <div class="card">
+            <div class="item item-divider">
+                Description
+            </div>
+            <div class="item item-text-wrap">
+                This is a basic Card with some text.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="item item-text-wrap">
+                <h1 align="center">#{{vm.myData.hashtag}}</h1>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="item item-divider" align="center">
+                See more pictures
+            </div>
+        </div>
+
+        <ng-list pictures="vm.pictures" col="5">
+        </ng-list>
+
+    </ion-content>
+</ion-view>

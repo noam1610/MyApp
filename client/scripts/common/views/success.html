@@ -1,0 +1,34 @@
+<ion-view title="Descriptif">
+    <ion-content class="has-header" style="background:#F0F0F0; ">
+        <div class="imageContest">
+            <img src="{{vm.game.picture}}" style="width: 100%;">
+        </div>
+
+        <div class="card">
+            <div class="item item-text-wrap">
+                <h1 align="center" style="font-family: Times New Roman; font-style: italic;">#{{vm.game.hashtag}}</h1>
+            </div>
+        </div>
+
+        <div class="row imageContest row-padding-white">
+            <div class="col">
+                <h2 class="hashtag" style="color:black;">#{{vm.game.hashtag}}</h2>
+                <h3 class="titre" style="color:black;"> {{vm.game.title}}</h3>
+                <h1 class="price" style="color: pink; font-size:7em;">
+                    {{vm.game.likelihood}}th
+                </h1>
+                <img class="medaille" src="images/app/logoMedaille.png">
+                <img src="{{vm.game.picture}}" style="width: 100%;opacity: 0.3;">
+
+            </div>
+        </div>
+
+        <div align="center" class="button button-full button-royal">
+            See other
+        </div>
+
+        <ng-list pictures="vm.pictures" col="5">
+        </ng-list>
+
+    </ion-content>
+</ion-view>

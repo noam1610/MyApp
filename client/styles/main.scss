@@ -1,0 +1,111 @@
+@import "../../node_modules/ionic-sdk/scss/ionic.scss";
+.imageContest {
+    position: relative;
+    width: 100%;
+    // border-style: solid;
+    // border-bottom: white;
+    // border-width: 0;
+    //padding: 1px;
+    /* for IE 6 */
+}
+
+.row-padding-white {
+    padding: 0px 0 0px 0;
+    > .col {
+        padding: 0px;
+    }
+}
+
+.imagecarre {
+    background: 50% 50% no-repeat;
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+}
+
+.image-square {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    background-position: center center;
+    border-color: white;
+    border-width: 10px;
+}
+
+.imagecarrepetit {
+    background: 50% 50% no-repeat;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+}
+
+.hashtag {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 100%;
+    color: white;
+    font-family: courier;
+    text-shadow: 2px 2px 2px black;
+}
+
+.hashtag-petit-photo {
+    position: relative;
+    top: 5%;
+    left: 5%;
+    width: 100%;
+    color: white;
+    font-family: courier;
+    text-shadow: 2px 2px 2px black;
+}
+
+.titre {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 100%;
+    color: white;
+    font-family: courier;
+    text-shadow: 2px 2px 2px black;
+}
+
+.likelihood {
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width: 100%;
+    color: white;
+    font-family: courier;
+    text-shadow: 2px 2px 2px black;
+}
+.price {
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    width: 100%;
+    color: white;
+    font-family: courier;
+    text-shadow: 2px 2px 2px black;
+}
+
+.medaille {
+    position: absolute;
+    top: 40%;
+    left: 12%;
+    width: 25%;
+    color: white;
+    
+}
+.likes {
+    position: absolute;
+    top: 70%;
+    left: 75%;
+    width: 100%;
+    color: white;
+}
+
+.likeheart {
+    position: absolute;
+    top: 70%;
+    left: 60%;
+}

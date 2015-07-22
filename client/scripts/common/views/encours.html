@@ -1,0 +1,15 @@
+<ion-view title="Games">
+    <ion-content class="has-header" style="padding:0;background:#F0F0F0; ">
+
+        <a ng-repeat="game in vm.games" ng-click="vm.goTo({{game.id}})"  class="row imageContest row-no-padding">
+            <div class="col">
+                <h2 class="hashtag">#{{game.hashtag}}</h2>
+                <h3 class="titre"> {{game.title}}</h3>
+                <h4 class="likes"> {{game.likes}} likes</h4>
+                <button class="likeheart button button-clear icon ion-android-favorite"></button>
+                <img src="{{game.picture}}" style="width: 100%;">
+            </div>
+        </a>
+
+    </ion-content>
+</ion-view>

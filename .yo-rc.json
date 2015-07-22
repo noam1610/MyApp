@@ -1,0 +1,14 @@
+{
+  "generator-mcfly": {
+    "filenameCase": "camel",
+    "filenameSuffix": false,
+    "appname": "contestGram",
+    "clientFolder": "client",
+    "ionic": true,
+    "famous": false,
+    "ngCordova": true,
+    "fontawesome": false,
+    "bootstrap": false,
+    "material": false
+  }
+}
