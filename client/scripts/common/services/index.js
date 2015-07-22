@@ -2,7 +2,7 @@
 
 module.exports = function(app) {
     // inject:start
-    require('./dataService')(app);
+    require('./game')(app);
     require('./instagram')(app);
     // inject:end
 };

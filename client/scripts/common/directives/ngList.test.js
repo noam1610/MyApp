@@ -24,6 +24,7 @@ describe(app.name, function() {
 
             it('should succeed', function() {
                 var element = unitHelper.compileDirective.call(this, directivename, '<ng-list></ng-list>');
+
                 expect(element.html().trim()).toBeDefined();
             });
 

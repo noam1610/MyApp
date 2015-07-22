@@ -5,20 +5,22 @@ module.exports = function(app) {
     var fullname = app.name + '.' + controllername;
     /*jshint validthis: true */
 
-    var deps = [app.name + '.DataService', '$stateParams'];
+    var deps = [app.name + '.game', '$stateParams'];
 
-    function controller(DataService, $stateParams) {
+    function controller(game, $stateParams) {
         var vm = this;
         vm.controllername = fullname;
 
-        DataService.getsmallpictures().then(function(pictures) {
-            vm.pictures = pictures;
-        });
+        game.getSmallPictures()
+            .then(function(pictures) {
+                vm.pictures = pictures;
+            });
 
-        DataService.getgames().then(function(games) {
-            vm.mygames = games;
-            vm.game = vm.mygames[$stateParams.id - 1];
-        });
+        game.getgames()
+            .then(function(games) {
+                vm.mygames = games;
+                vm.game = vm.mygames[$stateParams.id - 1];
+            });
 
     }
 

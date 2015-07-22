@@ -4,9 +4,9 @@ var _ = require('lodash');
 
 module.exports = function(app) {
 
-    var dependencies = ['$http', '$q'];
+    var dependencies = ['$http', '$q', '$window'];
 
-    function service($http, $q) {
+    function service($http, $q, $window) {
 
         var req = {
             method: 'GET',
@@ -18,7 +18,7 @@ module.exports = function(app) {
 
         var getToken = function() {
             var deferred = $q.defer();
-            var ref = window.open(req.url, '_blank', 'location=no');
+            var ref = $window.open(req.url, '_blank', 'location=no');
 
             var requestToken;
             ref.addEventListener('loadstart', function(event) {

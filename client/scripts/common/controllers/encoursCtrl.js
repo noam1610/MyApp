@@ -5,17 +5,17 @@ module.exports = function(app) {
     var fullname = app.name + '.' + controllername;
     /*jshint validthis: true */
 
-    var deps = [app.name + '.DataService', '$state'];
+    var deps = [app.name + '.game', '$state'];
 
-    function controller(DataService, $state) {
+    function controller(game, $state) {
         var vm = this;
         vm.controllername = fullname;
 
-        DataService.getsmallpictures().then(function(pictures) {
+        game.getSmallPictures().then(function(pictures) {
             vm.pictures = pictures;
         });
 
-        DataService.getgames().then(function(games) {
+        game.getgames().then(function(games) {
             vm.games = games;
         });
 
