@@ -15,23 +15,23 @@ module.exports = function(app) {
             vm.pictures = pictures;
         });
 
-        game.getgames().then(function(games) {
+        game.getGames().then(function(games) {
             vm.games = games;
         });
 
         vm.goTo = function(id) {
             var x = Math.random();
-            if (x < 0.5) {
+            if (x < 0.1) {
                 $state.go('tab.result', {
                     'id': id
                 });
             }
-            if (x > 0.5) {
+            if (x > 0.9) {
                 $state.go('tab.success', {
                     'id': id
                 });
             }
-        }
+        };
     }
 
     controller.$inject = deps;

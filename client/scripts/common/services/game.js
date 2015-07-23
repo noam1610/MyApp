@@ -1,6 +1,6 @@
 'use strict';
 var servicename = 'game';
-var _ = require('lodash')
+//var _ = require('lodash');
 module.exports = function(app) {
 
     var dependencies = ['$q', '$http'];
@@ -72,7 +72,6 @@ module.exports = function(app) {
             //         });
             //     });
         };
-
         var games = [{
             picture: 'images/app/montagne.jpeg',
             hashtag: 'Mount',
@@ -116,7 +115,7 @@ module.exports = function(app) {
             likelihood: '16'
         }];
 
-        var getgames = function() {
+        var getGames = function() {
             var deferred = $q.defer();
             deferred.resolve(games);
             return deferred.promise;
@@ -124,7 +123,7 @@ module.exports = function(app) {
 
         return {
             getSmallPictures: getSmallPictures,
-            getgames: getgames
+            getGames: getGames
         };
 
     }

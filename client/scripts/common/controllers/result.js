@@ -16,7 +16,7 @@ module.exports = function(app) {
                 vm.pictures = pictures;
             });
 
-        game.getgames()
+        game.getGames()
             .then(function(games) {
                 vm.mygames = games;
                 vm.game = vm.mygames[$stateParams.id - 1];
