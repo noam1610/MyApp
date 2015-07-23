@@ -3,7 +3,7 @@
 var angular = require('angular');
 require('angular-mocks');
 var app = require('../')('app');
-var controllername = 'gamesCtrl';
+var controllername = 'result';
 describe(app.name, function() {
 
     describe('Controllers', function() {
