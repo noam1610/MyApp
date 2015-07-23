@@ -6,7 +6,7 @@ var app = require('../')('app');
 var servicename = 'game';
 var randomuserdata = require('../../../../test/unit/fixtures/randomuserdata.js');
 
-fdescribe(app.name, function() {
+describe(app.name, function() {
 
     describe('Services', function() {
 
@@ -28,17 +28,26 @@ fdescribe(app.name, function() {
 
             it('getSmallPicture should succeed', function(done) {
 
-                this.$httpBackend
-                    .when('GET', 'http://api.randomuser.me/?results=30')
-                    .respond(randomuserdata);
+                // this.$httpBackend
+                //     .when('GET', 'http://api.randomuser.me/?results=30')
+                //     .respond(randomuserdata);
+
+                // this.service.getSmallPictures()
+                //     .then(function(pictures) {
+                //         expect(pictures.length).toBe(2);
+                //         done();
+                //     }, done);
 
                 this.service.getSmallPictures()
                     .then(function(pictures) {
-                        expect(pictures.length).toBe(2);
+                        console.log('je suis là p');
+                        expect(pictures.length).toBe(15);
                         done();
                     }, done);
 
-                this.$httpBackend.flush();
+                this.$rootScope.$apply();
+                //this.$httpBackend.flush();
+
             });
 
         });

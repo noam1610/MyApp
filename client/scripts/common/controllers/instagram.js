@@ -13,7 +13,7 @@ module.exports = function(app) {
 
         vm.open1 = function() {
             if ($window.cordova) {
-                var ref = $window.open('http://www.instagram.com', '_blank', 'location=yes,hardwareback=no');
+                $window.open('http://www.instagram.com', '_blank', 'location=yes,hardwareback=no');
             }
         };
     }
