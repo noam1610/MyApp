@@ -2,12 +2,12 @@
 
 module.exports = function(app) {
     // inject:start
-    require('./encoursCtrl')(app);
-    require('./gameCtrl')(app);
-    require('./gamesCtrl')(app);
+    require('./current')(app);
+    require('./game')(app);
+    require('./games')(app);
     require('./instagram')(app);
-    require('./loginCtrl')(app);
+    require('./login')(app);
     require('./pictures')(app);
-    require('./resultCtrl')(app);
+    require('./result')(app);
     // inject:end
 };

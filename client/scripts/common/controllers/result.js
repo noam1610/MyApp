@@ -1,5 +1,5 @@
 'use strict';
-var controllername = 'resultCtrl';
+var controllername = 'result';
 
 module.exports = function(app) {
     var fullname = app.name + '.' + controllername;

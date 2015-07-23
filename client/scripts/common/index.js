@@ -36,7 +36,7 @@ module.exports = function(namespace) {
                     views: {
                         'tab-games': {
                             template: require('./views/games.html'),
-                            controller: fullname + '.gamesCtrl as vm'
+                            controller: fullname + '.games as vm'
                         }
                     }
                 })
@@ -45,7 +45,7 @@ module.exports = function(namespace) {
                     views: {
                         'tab-games': {
                             template: require('./views/descriptif.html'),
-                            controller: fullname + '.gameCtrl as vm'
+                            controller: fullname + '.game as vm'
                         }
                     }
                 })
@@ -58,30 +58,30 @@ module.exports = function(namespace) {
                         }
                     }
                 })
-                .state('tab.encours', {
-                    url: '/encours',
+                .state('tab.current', {
+                    url: '/current',
                     views: {
-                        'tab-encours': {
-                            template: require('./views/encours.html'),
-                            controller: fullname + '.encoursCtrl as vm'
+                        'tab-current': {
+                            template: require('./views/current.html'),
+                            controller: fullname + '.current as vm'
                         }
                     }
                 })
                 .state('tab.result', {
                     url: '/result/:id',
                     views: {
-                        'tab-encours': {
+                        'tab-current': {
                             template: require('./views/result.html'),
-                            controller: fullname + '.resultCtrl as vm'
+                            controller: fullname + '.result as vm'
                         }
                     }
                 })
                 .state('tab.success', {
                     url: '/success/:id',
                     views: {
-                        'tab-encours': {
+                        'tab-current': {
                             template: require('./views/success.html'),
-                            controller: fullname + '.resultCtrl as vm'
+                            controller: fullname + '.result as vm'
                         }
                     }
                 })
@@ -98,7 +98,7 @@ module.exports = function(namespace) {
                 .state('login', {
                     url: '/login',
                     template: require('./views/login.html'),
-                    controller: fullname + '.loginCtrl as vm'
+                    controller: fullname + '.login as vm'
                 });
             $urlRouterProvider.otherwise('login');
         }

@@ -1,5 +1,5 @@
 'use strict';
-var controllername = 'gamesCtrl';
+var controllername = 'games';
 
 module.exports = function(app) {
     var fullname = app.name + '.' + controllername;
