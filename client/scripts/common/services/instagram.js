@@ -110,7 +110,8 @@ module.exports = function(app) {
             hashtag: 'Mount',
             title: 'Mountain',
             likes: '123',
-            id: '1'
+            id: '1',
+            likelihood: '42'
         }, {
             picture: 'images/app/foret.jpeg',
             hashtag: 'forest',
