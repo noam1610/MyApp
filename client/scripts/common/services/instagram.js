@@ -110,7 +110,8 @@ module.exports = function(app) {
             hashtag: 'Mount',
             title: 'Mountain',
             likes: '123',
-            id: '1'
+            id: '1',
+            likelihood: '42'
         }, {
             picture: 'images/app/foret.jpeg',
             hashtag: 'forest',
@@ -157,12 +158,10 @@ module.exports = function(app) {
         var getImages = function(token) {
 
             var promise = [getMedia(token), getSmallPictures()];
-            console.log(getMedia(token));
-            console.log(getSmallPictures());
+
             return $q.all(promise)
                 .then(function(data) {
                     return data[0].concat(data[1]);
-
                 });
 
         };

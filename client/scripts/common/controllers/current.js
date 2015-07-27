@@ -21,12 +21,12 @@ module.exports = function(app) {
 
         vm.goTo = function(id) {
             var x = Math.random();
-            if (x < 0.1) {
+            if (x < 0.5) {
                 $state.go('tab.result', {
                     'id': id
                 });
             }
-            if (x > 0.9) {
+            if (x > 0.5) {
                 $state.go('tab.success', {
                     'id': id
                 });
