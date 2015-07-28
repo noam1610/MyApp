@@ -11,9 +11,7 @@ module.exports = function(app) {
         var ngListCtrl = this;
         ngListCtrl.directivename = directivename;
 
-        $scope.$watch(function() {
-            return ngListCtrl.pictures;
-        }, function(newValue, oldValue) {
+        $scope.$watchCollection('ngListCtrl.pictures', function(newValue, oldValue) {
             ngListCtrl.myarray = _.chunk(ngListCtrl.pictures, ngListCtrl.col);
         });
 

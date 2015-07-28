@@ -23,7 +23,8 @@ module.exports = function(namespace) {
 
     app.config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider',
         function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
-            $ionicConfigProvider.views.transition('ios');
+            // $ionicConfigProvider.views.transition('ios');
+
             $ionicConfigProvider.tabs.position('bottom');
             $stateProvider
                 .state('tab', {
@@ -103,6 +104,15 @@ module.exports = function(namespace) {
             $urlRouterProvider.otherwise('login');
         }
     ]);
+
+    var configIonicDeps = ['$ionicConfigProvider'];
+    var configIonic = function($ionicConfigProvider) {
+        if (window.ionic.Platform.isAndroid()) {
+            $ionicConfigProvider.scrolling.jsScrolling(false);
+        }
+    };
+    configIonic.$inject = configIonicDeps;
+    app.config(configIonic);
 
     return app;
 };

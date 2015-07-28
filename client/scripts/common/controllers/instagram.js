@@ -16,6 +16,21 @@ module.exports = function(app) {
                 $window.open('http://www.instagram.com', '_blank', 'location=yes,hardwareback=no');
             }
         };
+
+        vm.openPhone = function() {
+            navigator.startApp.start('com.instagram.android');
+        };
+
+        vm.lookFor = function() {
+            navigator.startApp.check('com.instagram.android', function(message) {
+                    console.log(message);
+                    navigator.startApp.start([
+                        ['com.instagram.android']
+                    ]);
+                },
+                function(error) {});
+        };
+
     }
 
     controller.$inject = deps;
