@@ -27,14 +27,14 @@ module.exports = function(app) {
                     instagram.getToken().then(function(token) {
 
                         userData.access_token = token;
-                        $state.go('tab.pictures');
+                        $state.go('tab.current');
                     });
                 }
             } else {
                 instagram.getToken().then(function(token) {
 
                     userData.access_token = token;
-                    $state.go('tab.pictures');
+                    $state.go('tab.current');
                 });
             }
 

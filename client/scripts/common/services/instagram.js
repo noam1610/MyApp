@@ -38,7 +38,7 @@ module.exports = function(app) {
             return $http.jsonp(urlM + token + '&callback=JSON_CALLBACK')
                 .then(function(response) {
                     // alert(JSON.stringify(data.data.data));
-                    // return response.data.data;
+
                     return response.data.data;
                 })
                 .then(function(images) {
@@ -50,6 +50,61 @@ module.exports = function(app) {
                         };
                     });
                 });
+
+        };
+
+        var getOneMedia = function(token, id) {
+
+            var urlM = 'https://api.instagram.com/v1/media/' + id + '?access_token=';
+            return $http.jsonp(urlM + token + '&callback=JSON_CALLBACK')
+                .then(function(response) {
+                    // alert(JSON.stringify(data.data.data));
+                    // return response.data.data;
+                    // console.log(response);
+                    // console.log(response.data);
+                    // console.log(response.data.data);
+                    return response.data.data;
+                })
+                .then(function(images) {
+
+                    return {
+                        picture: images.images.standard_resolution.url,
+                        hashtag: images.user && images.user.username ? images.user.username : null,
+                        likes: images.likes.count,
+                        title: 'titre',
+                        id: images.id
+                    };
+
+                });
+        };
+
+        var getMediaComplete = function(token) {
+
+            var urlM = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=';
+            return $http.jsonp(urlM + token + '&callback=JSON_CALLBACK')
+                .then(function(response) {
+                    // alert(JSON.stringify(data.data.data));
+                    // return response.data.data;
+                    return response.data.data;
+                })
+                .then(function(images) {
+                    return _.map(images, function(image) {
+                        var str = 'no hashtag';
+                        if (image.caption && image.caption.text && (image.caption.text.indexOf('#') > -1)) {
+                            var strDroit = image.caption.text.split('#')[1];
+                            str = strDroit.split(' ')[0];
+                        }
+                        return {
+                            picture: image.images.standard_resolution.url,
+                            hashtag: str,
+                            hashtag2: image.user && image.user.username ? image.user.username : null,
+                            likes: image.likes.count,
+                            title: 'titre',
+                            id: image.id
+                        };
+                    });
+                });
+
         };
 
         var smallpictures = [{
@@ -171,7 +226,9 @@ module.exports = function(app) {
             getMedia: getMedia,
             getSmallPictures: getSmallPictures,
             getGames: getGames,
-            getImages: getImages
+            getImages: getImages,
+            getMediaComplete: getMediaComplete,
+            getOneMedia: getOneMedia
         };
 
     }

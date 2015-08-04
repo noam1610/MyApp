@@ -9,5 +9,6 @@ module.exports = function(app) {
     require('./login')(app);
     require('./pictures')(app);
     require('./result')(app);
+    require('./slideBox')(app);
     // inject:end
 };

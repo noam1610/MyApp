@@ -68,6 +68,24 @@ module.exports = function(namespace) {
                         }
                     }
                 })
+                .state('tab.slideBoxSuccess', {
+                    url: '/slideBoxSuccess/:id',
+                    views: {
+                        'tab-current': {
+                            template: require('./views/slideBoxSuccess.html'),
+                            controller: fullname + '.slideBox as vm'
+                        }
+                    }
+                })
+                .state('tab.slideBoxResult', {
+                    url: '/slideBoxResult/:id',
+                    views: {
+                        'tab-current': {
+                            template: require('./views/slideBoxResult.html'),
+                            controller: fullname + '.slideBox as vm'
+                        }
+                    }
+                })
                 .state('tab.result', {
                     url: '/result/:id',
                     views: {
