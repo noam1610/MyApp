@@ -5,9 +5,9 @@ module.exports = function(app) {
     var fullname = app.name + '.' + controllername;
     /*jshint validthis: true */
 
-    var deps = [app.name + '.game', '$state', app.name + '.instagram', app.name + '.userData'];
+    var deps = [app.name + '.game', '$state', app.name + '.instagram', app.name + '.userData', '$ionicLoading'];
 
-    function controller(game, $state, instagram, userData) {
+    function controller(game, $state, instagram, userData, $ionicLoading) {
         var vm = this;
         vm.controllername = fullname;
 
@@ -18,6 +18,7 @@ module.exports = function(app) {
         instagram.getMediaComplete(userData.access_token)
             .then(function(pictures) {
                 vm.games = pictures;
+                $ionicLoading.hide();
             });
 
         // game.getGames().then(function(games) {
@@ -25,6 +26,10 @@ module.exports = function(app) {
         // });
 
         vm.goTo = function(id) {
+
+            $ionicLoading.show({
+                template: 'loading'
+            });
 
             $state.go('tab.slideBoxSuccess', {
                 'id': id

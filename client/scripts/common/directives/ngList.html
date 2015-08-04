@@ -1,7 +1,7 @@
 <div class="row row-padding-white" ng-repeat="mypictures in ngListCtrl.myarray">
     <div class="col" ng-repeat="picture in mypictures">
         <div class="image-square" style="background-image:url('{{picture.url}}');height:{{ngListCtrl.windowWidth}}px;">
-            <div class="hashtag-petit-photo">#{{picture.hashtag}}</div>
+            <div ng-show="ngListCtrl.hashtag == 1" class="hashtag-petit-photo">#{{picture.hashtag}}</div>
         </div>
     </div>
 </div>

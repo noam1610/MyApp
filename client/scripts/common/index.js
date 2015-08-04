@@ -86,24 +86,24 @@ module.exports = function(namespace) {
                         }
                     }
                 })
-                .state('tab.result', {
-                    url: '/result/:id',
-                    views: {
-                        'tab-current': {
-                            template: require('./views/result.html'),
-                            controller: fullname + '.result as vm'
-                        }
-                    }
-                })
-                .state('tab.success', {
-                    url: '/success/:id',
-                    views: {
-                        'tab-current': {
-                            template: require('./views/success.html'),
-                            controller: fullname + '.result as vm'
-                        }
-                    }
-                })
+                // .state('tab.result', {
+                //     url: '/result/:id',
+                //     views: {
+                //         'tab-current': {
+                //             template: require('./views/result.html'),
+                //             controller: fullname + '.result as vm'
+                //         }
+                //     }
+                // })
+                // .state('tab.success', {
+                //     url: '/success/:id',
+                //     views: {
+                //         'tab-current': {
+                //             template: require('./views/success.html'),
+                //             controller: fullname + '.result as vm'
+                //         }
+                //     }
+                // })
                 .state('tab.instagram', {
                     url: '/instagram',
                     views: {

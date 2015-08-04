@@ -5,9 +5,9 @@ module.exports = function(app) {
     var fullname = app.name + '.' + controllername;
     /*jshint validthis: true */
 
-    var deps = [app.name + '.instagram', app.name + '.userData', '$state', '$ionicPopup', '$ionicPlatform', '$window', '$cordovaNetwork'];
+    var deps = [app.name + '.instagram', app.name + '.userData', '$state', '$ionicPopup', '$ionicPlatform', '$window', '$cordovaNetwork', '$ionicLoading'];
 
-    function controller(instagram, userData, $state, $ionicPopup, $ionicPlatform, $window, $cordovaNetwork) {
+    function controller(instagram, userData, $state, $ionicPopup, $ionicPlatform, $window, $cordovaNetwork, $ionicLoading) {
         var vm = this;
         vm.controllername = fullname;
         vm.login = function() {
@@ -25,9 +25,12 @@ module.exports = function(app) {
                         });
                 } else {
                     instagram.getToken().then(function(token) {
-
+                        alert('here');
                         userData.access_token = token;
                         $state.go('tab.current');
+                        $ionicLoading.show({
+                            template: 'loading'
+                        });
                     });
                 }
             } else {
@@ -35,6 +38,9 @@ module.exports = function(app) {
 
                     userData.access_token = token;
                     $state.go('tab.current');
+                    $ionicLoading.show({
+                        template: 'loading'
+                    });
                 });
             }
 

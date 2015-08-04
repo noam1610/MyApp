@@ -29,7 +29,8 @@ module.exports = function(app) {
             scope: {
                 title: '@',
                 pictures: '=',
-                col: '@'
+                col: '@',
+                hashtag: '@'
             },
             controller: controller,
             controllerAs: 'ngListCtrl',

@@ -66,10 +66,15 @@ module.exports = function(app) {
                     return response.data.data;
                 })
                 .then(function(images) {
-
+                    var str = 'no hashtag';
+                    if (images.caption && images.caption.text && (images.caption.text.indexOf('#') > -1)) {
+                        var strDroit = images.caption.text.split('#')[1];
+                        str = strDroit.split(' ')[0];
+                    }
                     return {
                         picture: images.images.standard_resolution.url,
-                        hashtag: images.user && images.user.username ? images.user.username : null,
+                        user: images.user && images.user.username ? images.user.username : null,
+                        hashtag: str,
                         likes: images.likes.count,
                         title: 'titre',
                         id: images.id
